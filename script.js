@@ -79,3 +79,24 @@ document.addEventListener("keydown", (event) =>{
     setTimeout(() => keyElement.classList.remove("active"), 150);
     }
 });
+
+function playNote(freq){
+    const now = ctx.currentTime;
+     //nuevo oscilador y gain para cada nota
+    const oscNote = ctx.createOscillator();
+    const gainNote = ctx.createGain();
+
+    oscNote.type = 'sine';
+    oscNote.frequency.value = freq;
+    // Conectar: oscilador con gain y luego salida
+    oscNote.connect(gainNote);
+    gainNote.connect(ctx.destination);
+
+    gainNote.gain.setValueAtTime (0,now); //empezar en cero
+    gainNote.gain.linearRampToValueAtTime  (0.2, now + 0.05); //ataque rápido
+    gainNote.gain.linearRampToValueAtTime (0, now + 0.5) //release
+
+    //iniciar el oscilador
+    oscNote.start(now);
+    oscNote.stop(now + 0.5); //detener después del release
+}
