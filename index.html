@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOM</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+    <!-- Overlay que aparece en portrait -->
+    <div class="rotate-message">
+        <img src="./src/img/turnyourphone.gif" alt="Rotate phone">
+        <p>Turn your phone to use the piano</p>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="app">
+        <header class="container">
+        <h1 id="title">BLOOM</h1>
+        </header>
+
+        <section class="controls">
+        <h2>Frequency Control</h2>
+        <label for="freq">Frecuencia:</label>
+        <input type="range" id="freq" min="100" max="1000" value="440">
+        <div class="buttons">
+            <button onclick="startSound()">Start</button>
+            <button onclick="stopSound()">Stop</button>
+        </div>
+        </section>
+
+        <section class="keyboard-section">
+        <h2>Keyboard</h2>
+        <div id="keyboard">
+            <button class="white_key" data-note="261.63">Do</button>
+            <button class="black_key" data-note="277.18">Do#</button>
+            <button class="white_key" data-note="293.66">Re</button>
+            <button class="black_key" data-note="311.13">Re#</button>
+            <button class="white_key" data-note="329.63">Mi</button>
+            <button class="white_key" data-note="349.23">Fa</button>
+            <button class="black_key" data-note="369.99">Fa#</button>
+            <button class="white_key" data-note="392.00">Sol</button>
+            <button class="black_key" data-note="415.30">Sol#</button>
+            <button class="white_key" data-note="440.00">La</button>
+            <button class="black_key" data-note="466.16">La#</button>
+            <button class="white_key" data-note="493.88">Si</button>
+        </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+    </html>
