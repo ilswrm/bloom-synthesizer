@@ -66,16 +66,16 @@ const keyMap = {
 };
 // Escuchar teclado físico
 document.addEventListener("keydown", (event) =>{
-    const key = event.key.toLowerCase();
-    if (keyMap[key]){
+    const keyPressed = event.key.toLowerCase();
+    // Buscar el botón HTML con data-key correspondiente
+    const keyElement = Array.from(keys).find(k => k.dataset.key === keyPressed);
+    if(keyElement){
         const now = ctx.currentTime;
-        osc.frequency.setTargetAtTime(keyMap[key], now, 0.1);
+        const freq = parseFloat(keyElement.dataset.note);
+        osc.frequency.setTargetAtTime(freq, now, 0.1);
 
-        // Feedback visual de la tecla correspondiente
-        const htmlKey = document.querySelector (`[data-note="${keyMap[key]}"]`);
-        if(htmlKey){
-            htmlKey.classList.add("active");
-            setTimeout(()=> htmlKey.classList.remove("active"), 200);
-        }
+    // Efecto visual
+    keyElement.classList.add("active");
+    setTimeout(() => keyElement.classList.remove("active"), 150);
     }
 });
