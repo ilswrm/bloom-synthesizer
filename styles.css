@@ -123,3 +123,12 @@ html, body {
 #keyboard .black_key:nth-child(7) { left: 52.5%; } /* Fa# */
 #keyboard .black_key:nth-child(9) { left: 66.5%; } /* Sol# */
 #keyboard .black_key:nth-child(11){ left: 81.5%; } /* La# */
+
+/*Cambio de color al tocar una tecla*/
+.white_key.active {
+    background-color: #f39c12; /* naranja */
+}
+
+.black_key.active {
+    background-color: #ffa500; /* un poco más claro que rojo */
+}

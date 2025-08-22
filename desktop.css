@@ -1,0 +1,29 @@
+/* Título */
+#title {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 13rem;
+    padding: .5rem ;
+    text-align: center;
+}
+#keyboard {
+    max-width: 1000px;
+    height: 220px;
+}
+
+.white_key { 
+    height: 220px; 
+    line-height: 180px; 
+    font-size: 1.5rem; 
+}
+.black_key { 
+    height: 150px; 
+    line-height: 100px; 
+}
+/*Cambio de color al tocar una tecla*/
+.white_key.active {
+    background-color: #f39c12; /* naranja */
+}
+
+.black_key.active {
+    background-color: #ffa500; /* un poco más claro que rojo */
+}
