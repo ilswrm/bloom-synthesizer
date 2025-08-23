@@ -29,12 +29,22 @@
 
         <section class="controls">
         <h2>Frequency Control</h2>
-        <label for="volume">Volume:</label>
-        <input type="range" id="volume" min="0" max="100" value="50">
+        <label for="volume">Volume:<input type="range" id="volume" min="0" max="100" value="50"></label>
+        <label for="attack">Attack:<input type="range" id="attack" min="0" max="2" step="0.1" value="0.5"></label>
+        <label for="decay">Decay: <input type="range" id="decay" min="0" max="2" step="0.1" value="0.2"></label>
+        <label for="sustain">Sustain: <input type="range" id="sustain" min="0" max="1" step="0.1" value="0.6"></label>
+        <label for="release">release <input type="range" id="release" min="0" max="2" step="0.1" value="0.3"></label>
         <div class="buttons">
             <button onclick="startSound()">Start</button>
             <button onclick="stopSound()">Stop</button>
         </div>
+        <label for="waveType">Wave Type:</label>
+        <select id="waveType">
+            <option value="sine">Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+        </select>
         </section>
 
         <section class="keyboard-section">
